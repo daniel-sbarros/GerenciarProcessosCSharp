@@ -20,21 +20,18 @@ namespace GerenciarProcessos
         {
             InitializeComponent();
             rdAssunto.CheckedChanged += rdNumero_CheckedChanged;
-            rdData.CheckedChanged += rdNumero_CheckedChanged;
             SQL = new StringBuilder("SELECT * FROM processos");
         }
 
         private void Form1_Shown(object sender, EventArgs e)
         {
             txtPesquisar.Focus();
-            addTipo.SelectedIndex = addStatus.SelectedIndex = 0;
             linkAtualizar_LinkClicked(null, null);
-            txtDate.Text = Global.Hoje;
         }
 
         private void rdNumero_CheckedChanged(object sender, EventArgs e)
         {
-            txtPesquisar.Mask = rdNumero.Checked ? "99999.999999.9999-99" : (rdData.Checked ? "99/99/9999" : "");
+            txtPesquisar.Mask = rdNumero.Checked ? "99999.999999.9999-99" : "";
             txtPesquisar.Clear();
             txtPesquisar.Focus();
         }
@@ -65,10 +62,6 @@ namespace GerenciarProcessos
             else if (rdPessoa.Checked)
             {
                 return $"WHERE Interessado LIKE '%{txtPesquisar.Text.Trim()}%' ";
-            }
-            else if (rdData.Checked)
-            {
-                return $"WHERE Data_da_Divisao LIKE '%{txtPesquisar.Text.Trim()}%' ";
             }
             else
             {
@@ -109,32 +102,6 @@ namespace GerenciarProcessos
             }
         }
 
-        private void tabPage2_Layout(object sender, LayoutEventArgs e)
-        {
-            addNumero.Focus();
-        }
-
-        private void btnAdicionar_Click(object sender, EventArgs e)
-        {
-            if (!addNumero.MaskFull || string.IsNullOrEmpty(addAssunto.Text) || string.IsNullOrEmpty(addInteressado.Text) || addStatus.SelectedIndex < 0 || !txtDate.MaskFull)
-            {
-                MessageBox.Show("Preencha todos os campos.");
-            }
-            else
-            {
-                Conexao conn = new(Global.DbName);
-
-                if (conn.Add("processos", addNumero.Text, addTipo.SelectedItem.ToString(), addAssunto.Text.Trim(), addInteressado.Text.Trim(), addStatus.SelectedItem.ToString(), addObservacoes.Text.Trim(), txtDate.Text))
-                {
-                    MessageBox.Show("Processo adicionado com sucesso.");
-                }
-                CarregarDgv(dgvProcessos);
-                addAssunto.Text = addInteressado.Text = addObservacoes.Text = addNumero.Text = "";
-                addStatus.SelectedIndex = 0;
-                addNumero.Focus();
-            }
-        }
-
         private void CarregarDgv(DataGridView dataGridView, string sql = null)
         {
             dataGridView.DataSource = new Conexao(Global.DbName).DataSource(sql == null ? SQL.ToString() : sql);
@@ -156,14 +123,6 @@ namespace GerenciarProcessos
         private void linkAtualizar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CarregarDgv(dgvProcessos, "SELECT * FROM processos");
-        }
-
-        private void btnLimpar_Click(object sender, EventArgs e)
-        {
-            addAssunto.Text = addInteressado.Text = addObservacoes.Text = addNumero.Text = txtDate.Text = "";
-            addTipo.SelectedIndex = addStatus.SelectedIndex = 0;
-            
-            addNumero.Focus();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -289,51 +248,6 @@ namespace GerenciarProcessos
             MostrarT();
         }
 
-        private void linkAbrir_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            LinkLabel linkLabel = (LinkLabel)sender;
-
-            if (linkLabel.Name == "linkAbrir")
-            {
-                AbrirProcesso(txtTipo.Text.Trim(), linkNumero.Text);
-            }
-            else
-            {
-                AbrirProcesso(addTipo.Text.Trim(), addNumero.Text);
-            }
-
-            //try
-            //{
-            //    System.Diagnostics.Process.Start(Global.Navegador, $"https://suap.ifma.edu.br/admin/{ (txtTipo.Text.Trim() == "Físico" ? "protocolo" : "processo_eletronico") }/processo/?q={linkNumero.Text}");
-            //}
-            //catch (Win32Exception noBrowser)
-            //{
-            //    if (noBrowser.ErrorCode == -2147467259)
-            //        MessageBox.Show($"noBrowser.Message\n\n{noBrowser.Message}");
-            //}
-            //catch (Exception other)
-            //{
-            //    MessageBox.Show($"other.Message\n\n{other.Message}");
-            //}
-        }
-
-        private void AbrirProcesso(string tipo, string numero)
-        {
-            try
-            {
-                System.Diagnostics.Process.Start(Global.Navegador, $"https://suap.ifma.edu.br/admin/{ (tipo == "Físico" ? "protocolo" : "processo_eletronico") }/processo/?q={numero}");
-            }
-            catch (Win32Exception noBrowser)
-            {
-                if (noBrowser.ErrorCode == -2147467259)
-                    MessageBox.Show($"noBrowser.Message\n\n{noBrowser.Message}");
-            }
-            catch (Exception other)
-            {
-                MessageBox.Show($"other.Message\n\n{other.Message}");
-            }
-        }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog()
@@ -369,6 +283,74 @@ namespace GerenciarProcessos
         private void linkRecentes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CarregarDgv(dgvProcessos, "SELECT * FROM processos ORDER BY Data_Ult_Mod DESC");
+        }
+
+        private void linkAdd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new Edit().ShowDialog();
+        }
+
+        private void cbxLstTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Conexao conexao = new Conexao(Global.DbName);
+            StringBuilder qr = null;
+
+            switch (cbxLstTipo.Text)
+            {
+                case "Status":
+                    qr = new StringBuilder("SELECT DISTINCT Status FROM processos ORDER BY Status");
+                    break;
+                case "Tipo":
+                    qr = new StringBuilder("SELECT DISTINCT Tipo FROM processos ORDER BY Tipo");
+                    break;
+                case "Data da Divisão":
+                    qr = new StringBuilder("SELECT DISTINCT Data_da_Divisao FROM processos ORDER BY Data_da_Divisao");
+                    break;
+                default:
+                    MessageBox.Show("Selecione um dos TIPOS de Listagem.");
+                    break;
+            }
+
+            if (qr != null)
+            {
+                SQLiteDataReader result = conexao.Select(qr.ToString());
+                cbxLstValores.Items.Clear();
+
+                while (result.Read())
+                {
+                    cbxLstValores.Items.Add(result[0]);
+                }
+            }
+
+            conexao.Close();
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            if (cbxLstTipo.SelectedIndex >= 0 && cbxLstValores.SelectedIndex >= 0)
+            {
+                Conexao conexao = new Conexao(Global.DbName);
+                StringBuilder qr = null;
+
+                switch (cbxLstTipo.Text)
+                {
+                    case "Status":
+                        qr = new StringBuilder($"SELECT * FROM processos WHERE Status LIKE '%{cbxLstValores.Text}%'");
+                        break;
+                    case "Tipo":
+                        qr = new StringBuilder($"SELECT * FROM processos WHERE Tipo LIKE '%{cbxLstValores.Text}%'");
+                        break;
+                    case "Data da Divisão":
+                        qr = new StringBuilder($"SELECT * FROM processos WHERE Data_da_Divisao LIKE '%{cbxLstValores.Text}%'");
+                        break;
+                    default:
+                        MessageBox.Show("Selecione um dos TIPOS de Listagem.");
+                        break;
+                }
+
+                dgvProcessos.DataSource = conexao.DataSource(qr.ToString());
+                lblAviso.Text = $"{dgvProcessos.Rows.Count} Processo(s) Encontrado(s).";
+            }
         }
     }
 }

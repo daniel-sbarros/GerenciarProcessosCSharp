@@ -31,24 +31,23 @@ namespace GerenciarProcessos
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.dgvProcessos = new System.Windows.Forms.DataGridView();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.linkAdd = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkDeletar = new System.Windows.Forms.LinkLabel();
             this.lblAviso = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkRecentes = new System.Windows.Forms.LinkLabel();
-            this.linkAtualizar = new System.Windows.Forms.LinkLabel();
             this.infoPanel = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -83,38 +82,24 @@ namespace GerenciarProcessos
             this.label12 = new System.Windows.Forms.Label();
             this.linkNumero = new System.Windows.Forms.LinkLabel();
             this.label11 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.checkFisicos = new System.Windows.Forms.CheckBox();
-            this.checkEletronicos = new System.Windows.Forms.CheckBox();
-            this.checkConcluidos = new System.Windows.Forms.CheckBox();
-            this.rdData = new System.Windows.Forms.RadioButton();
-            this.rdAssunto = new System.Windows.Forms.RadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.rdPessoa = new System.Windows.Forms.RadioButton();
             this.rdNumero = new System.Windows.Forms.RadioButton();
+            this.checkEletronicos = new System.Windows.Forms.CheckBox();
             this.txtPesquisar = new System.Windows.Forms.MaskedTextBox();
+            this.rdAssunto = new System.Windows.Forms.RadioButton();
+            this.checkFisicos = new System.Windows.Forms.CheckBox();
+            this.checkConcluidos = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.linkMostrar = new System.Windows.Forms.LinkLabel();
-            this.txtDate = new System.Windows.Forms.MaskedTextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.addObservacoes = new System.Windows.Forms.RichTextBox();
-            this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnAdicionar = new System.Windows.Forms.Button();
-            this.addInteressado = new System.Windows.Forms.TextBox();
-            this.addAssunto = new System.Windows.Forms.TextBox();
-            this.addStatus = new System.Windows.Forms.ComboBox();
-            this.addTipo = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnListar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.addNumero = new System.Windows.Forms.MaskedTextBox();
+            this.cbxLstValores = new System.Windows.Forms.ComboBox();
+            this.cbxLstTipo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcessos)).BeginInit();
@@ -126,7 +111,9 @@ namespace GerenciarProcessos
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarefas)).BeginInit();
             this.pnlAddTarefa.SuspendLayout();
             this.panel13.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,36 +156,25 @@ namespace GerenciarProcessos
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.tabControl1);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.panel2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(40, 130);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1287, 800);
             this.panel5.TabIndex = 4;
             // 
-            // tabControl1
+            // panel6
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1285, 798);
-            this.tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.Black;
-            this.tabPage1.Controls.Add(this.panel8);
-            this.tabPage1.Controls.Add(this.infoPanel);
-            this.tabPage1.Controls.Add(this.panel6);
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1277, 760);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Pesquisar Processos";
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Controls.Add(this.infoPanel);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 164);
+            this.panel6.Name = "panel6";
+            this.panel6.Padding = new System.Windows.Forms.Padding(5);
+            this.panel6.Size = new System.Drawing.Size(1285, 634);
+            this.panel6.TabIndex = 2;
             // 
             // panel8
             // 
@@ -207,19 +183,19 @@ namespace GerenciarProcessos
             this.panel8.Controls.Add(this.panel10);
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(3, 129);
+            this.panel8.Location = new System.Drawing.Point(5, 5);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(5);
-            this.panel8.Size = new System.Drawing.Size(595, 628);
-            this.panel8.TabIndex = 2;
+            this.panel8.Size = new System.Drawing.Size(597, 622);
+            this.panel8.TabIndex = 7;
             // 
             // panel11
             // 
             this.panel11.Controls.Add(this.dgvProcessos);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(5, 56);
+            this.panel11.Location = new System.Drawing.Point(5, 43);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(583, 499);
+            this.panel11.Size = new System.Drawing.Size(585, 518);
             this.panel11.TabIndex = 2;
             // 
             // dgvProcessos
@@ -239,20 +215,37 @@ namespace GerenciarProcessos
             this.dgvProcessos.ReadOnly = true;
             this.dgvProcessos.RowTemplate.Height = 25;
             this.dgvProcessos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProcessos.Size = new System.Drawing.Size(583, 499);
+            this.dgvProcessos.Size = new System.Drawing.Size(585, 518);
             this.dgvProcessos.TabIndex = 2;
             this.dgvProcessos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProcessos_RowEnter);
             // 
             // panel10
             // 
+            this.panel10.Controls.Add(this.linkAdd);
             this.panel10.Controls.Add(this.linkLabel1);
             this.panel10.Controls.Add(this.linkDeletar);
             this.panel10.Controls.Add(this.lblAviso);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(5, 555);
+            this.panel10.Location = new System.Drawing.Point(5, 561);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(583, 66);
+            this.panel10.Size = new System.Drawing.Size(585, 54);
             this.panel10.TabIndex = 1;
+            // 
+            // linkAdd
+            // 
+            this.linkAdd.AutoSize = true;
+            this.linkAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(0)))));
+            this.linkAdd.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkAdd.LinkColor = System.Drawing.Color.White;
+            this.linkAdd.Location = new System.Drawing.Point(4, 15);
+            this.linkAdd.MinimumSize = new System.Drawing.Size(95, 0);
+            this.linkAdd.Name = "linkAdd";
+            this.linkAdd.Size = new System.Drawing.Size(95, 25);
+            this.linkAdd.TabIndex = 4;
+            this.linkAdd.TabStop = true;
+            this.linkAdd.Text = "Adicionar";
+            this.linkAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAdd_LinkClicked);
             // 
             // linkLabel1
             // 
@@ -260,14 +253,14 @@ namespace GerenciarProcessos
             this.linkLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(0)))));
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(5, 35);
-            this.linkLabel1.MaximumSize = new System.Drawing.Size(277, 0);
-            this.linkLabel1.MinimumSize = new System.Drawing.Size(277, 0);
+            this.linkLabel1.Location = new System.Drawing.Point(105, 15);
+            this.linkLabel1.MinimumSize = new System.Drawing.Size(95, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(277, 25);
+            this.linkLabel1.Size = new System.Drawing.Size(95, 25);
             this.linkLabel1.TabIndex = 3;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Editar Processos Selecionados";
+            this.linkLabel1.Text = "Editar";
+            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // linkDeletar
@@ -276,78 +269,79 @@ namespace GerenciarProcessos
             this.linkDeletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(0)))));
             this.linkDeletar.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkDeletar.LinkColor = System.Drawing.Color.White;
-            this.linkDeletar.Location = new System.Drawing.Point(5, 6);
-            this.linkDeletar.MaximumSize = new System.Drawing.Size(277, 0);
-            this.linkDeletar.MinimumSize = new System.Drawing.Size(277, 0);
+            this.linkDeletar.Location = new System.Drawing.Point(206, 15);
+            this.linkDeletar.MaximumSize = new System.Drawing.Size(75, 0);
+            this.linkDeletar.MinimumSize = new System.Drawing.Size(95, 0);
             this.linkDeletar.Name = "linkDeletar";
-            this.linkDeletar.Size = new System.Drawing.Size(277, 25);
+            this.linkDeletar.Size = new System.Drawing.Size(95, 25);
             this.linkDeletar.TabIndex = 2;
             this.linkDeletar.TabStop = true;
-            this.linkDeletar.Text = "Deletar Processos Selecionados";
+            this.linkDeletar.Text = "Deletar";
+            this.linkDeletar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkDeletar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkDeletar_LinkClicked);
             // 
             // lblAviso
             // 
             this.lblAviso.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblAviso.AutoSize = true;
-            this.lblAviso.Location = new System.Drawing.Point(300, 3);
-            this.lblAviso.MinimumSize = new System.Drawing.Size(280, 0);
+            this.lblAviso.Location = new System.Drawing.Point(312, 15);
+            this.lblAviso.MinimumSize = new System.Drawing.Size(270, 0);
             this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(280, 25);
+            this.lblAviso.Size = new System.Drawing.Size(270, 25);
             this.lblAviso.TabIndex = 0;
             this.lblAviso.Text = "000 Registro(s) Encontrado(s).";
             this.lblAviso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.linkLabel2);
             this.panel9.Controls.Add(this.linkRecentes);
-            this.panel9.Controls.Add(this.linkAtualizar);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(5, 5);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(583, 51);
+            this.panel9.Size = new System.Drawing.Size(585, 38);
             this.panel9.TabIndex = 0;
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel2.LinkColor = System.Drawing.Color.White;
+            this.linkLabel2.Location = new System.Drawing.Point(4, 9);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(98, 20);
+            this.linkLabel2.TabIndex = 12;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Mostrar Tudo";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAtualizar_LinkClicked);
             // 
             // linkRecentes
             // 
-            this.linkRecentes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkRecentes.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.linkRecentes.AutoSize = true;
             this.linkRecentes.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkRecentes.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkRecentes.LinkColor = System.Drawing.Color.White;
-            this.linkRecentes.Location = new System.Drawing.Point(325, 13);
+            this.linkRecentes.Location = new System.Drawing.Point(514, 9);
             this.linkRecentes.Name = "linkRecentes";
-            this.linkRecentes.Size = new System.Drawing.Size(255, 20);
-            this.linkRecentes.TabIndex = 10;
+            this.linkRecentes.Size = new System.Drawing.Size(68, 20);
+            this.linkRecentes.TabIndex = 11;
             this.linkRecentes.TabStop = true;
-            this.linkRecentes.Text = "Processos Modificados Recentimente";
+            this.linkRecentes.Text = "Recentes";
             this.linkRecentes.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkRecentes_LinkClicked);
-            // 
-            // linkAtualizar
-            // 
-            this.linkAtualizar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.linkAtualizar.AutoSize = true;
-            this.linkAtualizar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkAtualizar.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkAtualizar.LinkColor = System.Drawing.Color.White;
-            this.linkAtualizar.Location = new System.Drawing.Point(3, 13);
-            this.linkAtualizar.Name = "linkAtualizar";
-            this.linkAtualizar.Size = new System.Drawing.Size(98, 20);
-            this.linkAtualizar.TabIndex = 5;
-            this.linkAtualizar.TabStop = true;
-            this.linkAtualizar.Text = "Mostrar Tudo";
-            this.linkAtualizar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAtualizar_LinkClicked);
             // 
             // infoPanel
             // 
             this.infoPanel.AutoScroll = true;
             this.infoPanel.Controls.Add(this.panel12);
             this.infoPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.infoPanel.Location = new System.Drawing.Point(598, 129);
+            this.infoPanel.Location = new System.Drawing.Point(602, 5);
             this.infoPanel.Name = "infoPanel";
             this.infoPanel.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.infoPanel.Size = new System.Drawing.Size(676, 628);
-            this.infoPanel.TabIndex = 1;
+            this.infoPanel.Size = new System.Drawing.Size(676, 622);
+            this.infoPanel.TabIndex = 6;
             // 
             // panel12
             // 
@@ -358,7 +352,7 @@ namespace GerenciarProcessos
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(5, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(671, 628);
+            this.panel12.Size = new System.Drawing.Size(671, 622);
             this.panel12.TabIndex = 0;
             // 
             // panel15
@@ -368,7 +362,7 @@ namespace GerenciarProcessos
             this.panel15.Location = new System.Drawing.Point(0, 436);
             this.panel15.Name = "panel15";
             this.panel15.Padding = new System.Windows.Forms.Padding(5);
-            this.panel15.Size = new System.Drawing.Size(669, 73);
+            this.panel15.Size = new System.Drawing.Size(669, 67);
             this.panel15.TabIndex = 2;
             // 
             // dgvTarefas
@@ -381,21 +375,13 @@ namespace GerenciarProcessos
             this.dgvTarefas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvTarefas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.dgvTarefas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.LimeGreen;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTarefas.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTarefas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTarefas.Location = new System.Drawing.Point(5, 5);
             this.dgvTarefas.Name = "dgvTarefas";
             this.dgvTarefas.ReadOnly = true;
             this.dgvTarefas.RowTemplate.Height = 25;
             this.dgvTarefas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTarefas.Size = new System.Drawing.Size(659, 63);
+            this.dgvTarefas.Size = new System.Drawing.Size(659, 57);
             this.dgvTarefas.TabIndex = 3;
             this.dgvTarefas.DoubleClick += new System.EventHandler(this.dgvTarefas_DoubleClick);
             // 
@@ -409,7 +395,7 @@ namespace GerenciarProcessos
             this.pnlAddTarefa.Controls.Add(this.arqDesc);
             this.pnlAddTarefa.Controls.Add(this.label13);
             this.pnlAddTarefa.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlAddTarefa.Location = new System.Drawing.Point(0, 509);
+            this.pnlAddTarefa.Location = new System.Drawing.Point(0, 503);
             this.pnlAddTarefa.Name = "pnlAddTarefa";
             this.pnlAddTarefa.Size = new System.Drawing.Size(669, 117);
             this.pnlAddTarefa.TabIndex = 1;
@@ -525,17 +511,16 @@ namespace GerenciarProcessos
             this.linkEditar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkEditar.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkEditar.LinkColor = System.Drawing.Color.White;
-            this.linkEditar.Location = new System.Drawing.Point(616, 5);
+            this.linkEditar.Location = new System.Drawing.Point(604, 5);
             this.linkEditar.Name = "linkEditar";
             this.linkEditar.Size = new System.Drawing.Size(48, 20);
-            this.linkEditar.TabIndex = 21;
+            this.linkEditar.TabIndex = 22;
             this.linkEditar.TabStop = true;
             this.linkEditar.Text = "Editar";
             this.linkEditar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkEditar_LinkClicked);
             // 
             // txtStatus
             // 
-            this.txtStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtStatus.Enabled = false;
             this.txtStatus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -547,7 +532,7 @@ namespace GerenciarProcessos
             "Esperando Homologação",
             "Esperando Assinatura",
             "Concluído"});
-            this.txtStatus.Location = new System.Drawing.Point(152, 179);
+            this.txtStatus.Location = new System.Drawing.Point(153, 179);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(260, 33);
             this.txtStatus.TabIndex = 20;
@@ -574,7 +559,6 @@ namespace GerenciarProcessos
             this.linkAbrir.TabIndex = 18;
             this.linkAbrir.TabStop = true;
             this.linkAbrir.Text = "IR";
-            this.linkAbrir.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAbrir_LinkClicked);
             // 
             // button2
             // 
@@ -697,7 +681,6 @@ namespace GerenciarProcessos
             this.linkInteressado.TabIndex = 7;
             this.linkInteressado.TabStop = true;
             this.linkInteressado.Text = "00000.000000.0000-00";
-            this.linkInteressado.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.copiar_LinkLabel);
             // 
             // label16
             // 
@@ -773,7 +756,6 @@ namespace GerenciarProcessos
             this.linkNumero.TabIndex = 1;
             this.linkNumero.TabStop = true;
             this.linkNumero.Text = "00000.000000.0000-00";
-            this.linkNumero.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.copiar_LinkLabel);
             // 
             // label11
             // 
@@ -785,96 +767,49 @@ namespace GerenciarProcessos
             this.label11.TabIndex = 0;
             this.label11.Text = "Número:";
             // 
-            // panel6
+            // panel2
             // 
-            this.panel6.Controls.Add(this.checkFisicos);
-            this.panel6.Controls.Add(this.checkEletronicos);
-            this.panel6.Controls.Add(this.checkConcluidos);
-            this.panel6.Controls.Add(this.rdData);
-            this.panel6.Controls.Add(this.rdAssunto);
-            this.panel6.Controls.Add(this.rdPessoa);
-            this.panel6.Controls.Add(this.rdNumero);
-            this.panel6.Controls.Add(this.txtPesquisar);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(3, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1271, 126);
-            this.panel6.TabIndex = 0;
+            this.panel2.Controls.Add(this.tabControl1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1285, 164);
+            this.panel2.TabIndex = 1;
             // 
-            // checkFisicos
+            // tabControl1
             // 
-            this.checkFisicos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkFisicos.AutoSize = true;
-            this.checkFisicos.Checked = true;
-            this.checkFisicos.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkFisicos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkFisicos.Location = new System.Drawing.Point(566, 91);
-            this.checkFisicos.Name = "checkFisicos";
-            this.checkFisicos.Size = new System.Drawing.Size(139, 24);
-            this.checkFisicos.TabIndex = 9;
-            this.checkFisicos.Text = "Processos Físicos";
-            this.checkFisicos.UseVisualStyleBackColor = true;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1285, 164);
+            this.tabControl1.TabIndex = 10;
             // 
-            // checkEletronicos
+            // tabPage1
             // 
-            this.checkEletronicos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkEletronicos.AutoSize = true;
-            this.checkEletronicos.Checked = true;
-            this.checkEletronicos.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkEletronicos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkEletronicos.Location = new System.Drawing.Point(769, 91);
-            this.checkEletronicos.Name = "checkEletronicos";
-            this.checkEletronicos.Size = new System.Drawing.Size(169, 24);
-            this.checkEletronicos.TabIndex = 8;
-            this.checkEletronicos.Text = "Processos Eletrônicos";
-            this.checkEletronicos.UseVisualStyleBackColor = true;
-            // 
-            // checkConcluidos
-            // 
-            this.checkConcluidos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkConcluidos.AutoSize = true;
-            this.checkConcluidos.Checked = true;
-            this.checkConcluidos.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkConcluidos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkConcluidos.Location = new System.Drawing.Point(333, 91);
-            this.checkConcluidos.Name = "checkConcluidos";
-            this.checkConcluidos.Size = new System.Drawing.Size(169, 24);
-            this.checkConcluidos.TabIndex = 7;
-            this.checkConcluidos.Text = "Processos Concluidos";
-            this.checkConcluidos.UseVisualStyleBackColor = true;
-            // 
-            // rdData
-            // 
-            this.rdData.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rdData.AutoSize = true;
-            this.rdData.BackColor = System.Drawing.Color.Black;
-            this.rdData.Location = new System.Drawing.Point(777, 16);
-            this.rdData.Name = "rdData";
-            this.rdData.Size = new System.Drawing.Size(161, 29);
-            this.rdData.TabIndex = 6;
-            this.rdData.TabStop = true;
-            this.rdData.Text = "Data da Divisão";
-            this.rdData.UseVisualStyleBackColor = false;
-            // 
-            // rdAssunto
-            // 
-            this.rdAssunto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rdAssunto.AutoSize = true;
-            this.rdAssunto.BackColor = System.Drawing.Color.Black;
-            this.rdAssunto.Location = new System.Drawing.Point(660, 16);
-            this.rdAssunto.Name = "rdAssunto";
-            this.rdAssunto.Size = new System.Drawing.Size(97, 29);
-            this.rdAssunto.TabIndex = 4;
-            this.rdAssunto.TabStop = true;
-            this.rdAssunto.Text = "Assunto";
-            this.rdAssunto.UseVisualStyleBackColor = false;
+            this.tabPage1.BackColor = System.Drawing.Color.Black;
+            this.tabPage1.Controls.Add(this.rdPessoa);
+            this.tabPage1.Controls.Add(this.rdNumero);
+            this.tabPage1.Controls.Add(this.checkEletronicos);
+            this.tabPage1.Controls.Add(this.txtPesquisar);
+            this.tabPage1.Controls.Add(this.rdAssunto);
+            this.tabPage1.Controls.Add(this.checkFisicos);
+            this.tabPage1.Controls.Add(this.checkConcluidos);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1277, 126);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Pesquisar";
             // 
             // rdPessoa
             // 
-            this.rdPessoa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rdPessoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rdPessoa.AutoSize = true;
             this.rdPessoa.BackColor = System.Drawing.Color.Black;
-            this.rdPessoa.Location = new System.Drawing.Point(452, 16);
+            this.rdPessoa.Location = new System.Drawing.Point(545, 6);
             this.rdPessoa.Name = "rdPessoa";
             this.rdPessoa.Size = new System.Drawing.Size(188, 29);
             this.rdPessoa.TabIndex = 3;
@@ -883,11 +818,11 @@ namespace GerenciarProcessos
             // 
             // rdNumero
             // 
-            this.rdNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rdNumero.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rdNumero.AutoSize = true;
             this.rdNumero.BackColor = System.Drawing.Color.Black;
             this.rdNumero.Checked = true;
-            this.rdNumero.Location = new System.Drawing.Point(333, 16);
+            this.rdNumero.Location = new System.Drawing.Point(335, 6);
             this.rdNumero.Name = "rdNumero";
             this.rdNumero.Size = new System.Drawing.Size(99, 29);
             this.rdNumero.TabIndex = 2;
@@ -896,12 +831,26 @@ namespace GerenciarProcessos
             this.rdNumero.UseVisualStyleBackColor = false;
             this.rdNumero.CheckedChanged += new System.EventHandler(this.rdNumero_CheckedChanged);
             // 
+            // checkEletronicos
+            // 
+            this.checkEletronicos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.checkEletronicos.AutoSize = true;
+            this.checkEletronicos.Checked = true;
+            this.checkEletronicos.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkEletronicos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkEletronicos.Location = new System.Drawing.Point(771, 86);
+            this.checkEletronicos.Name = "checkEletronicos";
+            this.checkEletronicos.Size = new System.Drawing.Size(169, 24);
+            this.checkEletronicos.TabIndex = 8;
+            this.checkEletronicos.Text = "Processos Eletrônicos";
+            this.checkEletronicos.UseVisualStyleBackColor = true;
+            // 
             // txtPesquisar
             // 
-            this.txtPesquisar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPesquisar.Culture = new System.Globalization.CultureInfo("en-001");
             this.txtPesquisar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtPesquisar.Location = new System.Drawing.Point(332, 51);
+            this.txtPesquisar.Location = new System.Drawing.Point(335, 47);
             this.txtPesquisar.Mask = "99999.999999.9999-99";
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(607, 33);
@@ -909,244 +858,111 @@ namespace GerenciarProcessos
             this.txtPesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisar_KeyDown);
             // 
+            // rdAssunto
+            // 
+            this.rdAssunto.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rdAssunto.AutoSize = true;
+            this.rdAssunto.BackColor = System.Drawing.Color.Black;
+            this.rdAssunto.Location = new System.Drawing.Point(844, 6);
+            this.rdAssunto.Name = "rdAssunto";
+            this.rdAssunto.Size = new System.Drawing.Size(97, 29);
+            this.rdAssunto.TabIndex = 4;
+            this.rdAssunto.TabStop = true;
+            this.rdAssunto.Text = "Assunto";
+            this.rdAssunto.UseVisualStyleBackColor = false;
+            // 
+            // checkFisicos
+            // 
+            this.checkFisicos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.checkFisicos.AutoSize = true;
+            this.checkFisicos.Checked = true;
+            this.checkFisicos.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkFisicos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkFisicos.Location = new System.Drawing.Point(568, 86);
+            this.checkFisicos.Name = "checkFisicos";
+            this.checkFisicos.Size = new System.Drawing.Size(139, 24);
+            this.checkFisicos.TabIndex = 9;
+            this.checkFisicos.Text = "Processos Físicos";
+            this.checkFisicos.UseVisualStyleBackColor = true;
+            // 
+            // checkConcluidos
+            // 
+            this.checkConcluidos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.checkConcluidos.AutoSize = true;
+            this.checkConcluidos.Checked = true;
+            this.checkConcluidos.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkConcluidos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkConcluidos.Location = new System.Drawing.Point(335, 86);
+            this.checkConcluidos.Name = "checkConcluidos";
+            this.checkConcluidos.Size = new System.Drawing.Size(169, 24);
+            this.checkConcluidos.TabIndex = 7;
+            this.checkConcluidos.Text = "Processos Concluidos";
+            this.checkConcluidos.UseVisualStyleBackColor = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Black;
-            this.tabPage2.Controls.Add(this.linkMostrar);
-            this.tabPage2.Controls.Add(this.txtDate);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.addObservacoes);
-            this.tabPage2.Controls.Add(this.btnLimpar);
-            this.tabPage2.Controls.Add(this.btnAdicionar);
-            this.tabPage2.Controls.Add(this.addInteressado);
-            this.tabPage2.Controls.Add(this.addAssunto);
-            this.tabPage2.Controls.Add(this.addStatus);
-            this.tabPage2.Controls.Add(this.addTipo);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.btnListar);
             this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.addNumero);
+            this.tabPage2.Controls.Add(this.cbxLstValores);
+            this.tabPage2.Controls.Add(this.cbxLstTipo);
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1277, 760);
+            this.tabPage2.Size = new System.Drawing.Size(1277, 126);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Adicionar Processo";
-            this.tabPage2.Layout += new System.Windows.Forms.LayoutEventHandler(this.tabPage2_Layout);
+            this.tabPage2.Text = "Listar";
             // 
-            // linkMostrar
+            // btnListar
             // 
-            this.linkMostrar.AutoSize = true;
-            this.linkMostrar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linkMostrar.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkMostrar.LinkColor = System.Drawing.Color.LimeGreen;
-            this.linkMostrar.Location = new System.Drawing.Point(565, 108);
-            this.linkMostrar.Name = "linkMostrar";
-            this.linkMostrar.Size = new System.Drawing.Size(30, 25);
-            this.linkMostrar.TabIndex = 19;
-            this.linkMostrar.TabStop = true;
-            this.linkMostrar.Text = "IR";
-            this.linkMostrar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAbrir_LinkClicked);
-            // 
-            // txtDate
-            // 
-            this.txtDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtDate.Location = new System.Drawing.Point(794, 162);
-            this.txtDate.Mask = "99/99/9999";
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(230, 33);
-            this.txtDate.TabIndex = 3;
-            this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(641, 165);
-            this.label9.MinimumSize = new System.Drawing.Size(125, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(147, 25);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Data da Divisão:";
-            // 
-            // addObservacoes
-            // 
-            this.addObservacoes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.addObservacoes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addObservacoes.Location = new System.Drawing.Point(186, 333);
-            this.addObservacoes.Name = "addObservacoes";
-            this.addObservacoes.Size = new System.Drawing.Size(838, 126);
-            this.addObservacoes.TabIndex = 6;
-            this.addObservacoes.Text = "";
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
-            this.btnLimpar.Location = new System.Drawing.Point(603, 507);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(210, 59);
-            this.btnLimpar.TabIndex = 8;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.UseVisualStyleBackColor = true;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAdicionar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAdicionar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
-            this.btnAdicionar.Location = new System.Drawing.Point(266, 507);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(210, 59);
-            this.btnAdicionar.TabIndex = 7;
-            this.btnAdicionar.Text = "Adicionar";
-            this.btnAdicionar.UseVisualStyleBackColor = true;
-            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
-            // 
-            // addInteressado
-            // 
-            this.addInteressado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.addInteressado.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addInteressado.Location = new System.Drawing.Point(186, 219);
-            this.addInteressado.Name = "addInteressado";
-            this.addInteressado.Size = new System.Drawing.Size(373, 33);
-            this.addInteressado.TabIndex = 4;
-            // 
-            // addAssunto
-            // 
-            this.addAssunto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.addAssunto.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addAssunto.Location = new System.Drawing.Point(186, 162);
-            this.addAssunto.Name = "addAssunto";
-            this.addAssunto.Size = new System.Drawing.Size(373, 33);
-            this.addAssunto.TabIndex = 2;
-            // 
-            // addStatus
-            // 
-            this.addStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.addStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.addStatus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addStatus.FormattingEnabled = true;
-            this.addStatus.Items.AddRange(new object[] {
-            "Não Iniciado",
-            "Em Execução",
-            "Esperando Homologação",
-            "Esperando Assinatura",
-            "Concluído"});
-            this.addStatus.Location = new System.Drawing.Point(186, 276);
-            this.addStatus.Name = "addStatus";
-            this.addStatus.Size = new System.Drawing.Size(373, 33);
-            this.addStatus.TabIndex = 5;
-            // 
-            // addTipo
-            // 
-            this.addTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.addTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.addTipo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addTipo.FormattingEnabled = true;
-            this.addTipo.Items.AddRange(new object[] {
-            "Físico",
-            "Eletrônico"});
-            this.addTipo.Location = new System.Drawing.Point(794, 105);
-            this.addTipo.Name = "addTipo";
-            this.addTipo.Size = new System.Drawing.Size(230, 33);
-            this.addTipo.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(52, 336);
-            this.label8.MinimumSize = new System.Drawing.Size(125, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(125, 25);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Observações:";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(52, 279);
-            this.label7.MinimumSize = new System.Drawing.Size(125, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 25);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Status:";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(52, 222);
-            this.label6.MinimumSize = new System.Drawing.Size(125, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 25);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Interessando:";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(52, 165);
-            this.label5.MinimumSize = new System.Drawing.Size(125, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 25);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Assunto:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(641, 108);
-            this.label4.MinimumSize = new System.Drawing.Size(125, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 25);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Tipo:";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 108);
-            this.label3.MinimumSize = new System.Drawing.Size(125, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Número:";
+            this.btnListar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnListar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnListar.Location = new System.Drawing.Point(957, 44);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(133, 38);
+            this.btnListar.TabIndex = 24;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(384, 32);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(206, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(262, 37);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Adicionar Processo";
+            this.label2.Size = new System.Drawing.Size(102, 25);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Listar Por:";
             // 
-            // addNumero
+            // cbxLstValores
             // 
-            this.addNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.addNumero.Culture = new System.Globalization.CultureInfo("en-001");
-            this.addNumero.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addNumero.Location = new System.Drawing.Point(186, 105);
-            this.addNumero.Mask = "99999.999999.9999-99";
-            this.addNumero.Name = "addNumero";
-            this.addNumero.Size = new System.Drawing.Size(373, 33);
-            this.addNumero.TabIndex = 0;
-            this.addNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cbxLstValores.BackColor = System.Drawing.Color.Black;
+            this.cbxLstValores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxLstValores.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbxLstValores.ForeColor = System.Drawing.Color.LimeGreen;
+            this.cbxLstValores.FormattingEnabled = true;
+            this.cbxLstValores.Location = new System.Drawing.Point(580, 47);
+            this.cbxLstValores.Name = "cbxLstValores";
+            this.cbxLstValores.Size = new System.Drawing.Size(371, 33);
+            this.cbxLstValores.TabIndex = 22;
+            // 
+            // cbxLstTipo
+            // 
+            this.cbxLstTipo.BackColor = System.Drawing.Color.Black;
+            this.cbxLstTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxLstTipo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbxLstTipo.ForeColor = System.Drawing.Color.LimeGreen;
+            this.cbxLstTipo.FormattingEnabled = true;
+            this.cbxLstTipo.Items.AddRange(new object[] {
+            "Status",
+            "Tipo",
+            "Data da Divisão"});
+            this.cbxLstTipo.Location = new System.Drawing.Point(314, 47);
+            this.cbxLstTipo.Name = "cbxLstTipo";
+            this.cbxLstTipo.Size = new System.Drawing.Size(260, 33);
+            this.cbxLstTipo.TabIndex = 21;
+            this.cbxLstTipo.SelectedIndexChanged += new System.EventHandler(this.cbxLstTipo_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -1169,8 +985,7 @@ namespace GerenciarProcessos
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcessos)).EndInit();
@@ -1186,8 +1001,10 @@ namespace GerenciarProcessos
             this.pnlAddTarefa.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
@@ -1201,80 +1018,67 @@ namespace GerenciarProcessos
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.MaskedTextBox txtPesquisar;
-        private System.Windows.Forms.RadioButton rdPessoa;
-        private System.Windows.Forms.RadioButton rdNumero;
-        private System.Windows.Forms.RadioButton rdAssunto;
-        private System.Windows.Forms.MaskedTextBox addNumero;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.TextBox addInteressado;
-        private System.Windows.Forms.TextBox addAssunto;
-        private System.Windows.Forms.ComboBox addStatus;
-        private System.Windows.Forms.ComboBox addTipo;
-        private System.Windows.Forms.RichTextBox addObservacoes;
-        private System.Windows.Forms.LinkLabel linkAtualizar;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MaskedTextBox txtDate;
-        private System.Windows.Forms.RadioButton rdData;
+        private System.Windows.Forms.CheckBox checkConcluidos;
+        private System.Windows.Forms.CheckBox checkFisicos;
+        private System.Windows.Forms.CheckBox checkEletronicos;
+        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel infoPanel;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.DataGridView dgvProcessos;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.LinkLabel linkDeletar;
+        private System.Windows.Forms.LinkLabel linkAdd;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.LinkLabel linkDeletar;
         private System.Windows.Forms.Label lblAviso;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.LinkLabel linkRecentes;
+        private System.Windows.Forms.Panel infoPanel;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.DataGridView dgvTarefas;
         private System.Windows.Forms.Panel pnlAddTarefa;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.TextBox arqPath;
+        private System.Windows.Forms.Button btnCancelarTarefa;
+        private System.Windows.Forms.Button btnSalvarTarefa;
+        private System.Windows.Forms.TextBox arqDesc;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.LinkLabel linkNumero;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label txtTipo;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label txtAssunto;
+        private System.Windows.Forms.ComboBox txtStatus;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.LinkLabel linkAbrir;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.LinkLabel btnAddTarefa;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.RichTextBox txtObservacoes;
+        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label txtDivisao;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.LinkLabel linkInteressado;
-        private System.Windows.Forms.RichTextBox txtObservacoes;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.DataGridView dgvTarefas;
-        private System.Windows.Forms.CheckBox checkConcluidos;
-        private System.Windows.Forms.LinkLabel btnAddTarefa;
-        private System.Windows.Forms.TextBox arqDesc;
-        private System.Windows.Forms.Button btnCancelarTarefa;
-        private System.Windows.Forms.Button btnSalvarTarefa;
-        private System.Windows.Forms.CheckBox checkFisicos;
-        private System.Windows.Forms.CheckBox checkEletronicos;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.LinkLabel linkAbrir;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.TextBox arqPath;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox txtStatus;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label txtAssunto;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label txtTipo;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.LinkLabel linkNumero;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.LinkLabel linkEditar;
-        private System.Windows.Forms.LinkLabel linkRecentes;
-        private System.Windows.Forms.LinkLabel linkMostrar;
+        private System.Windows.Forms.RadioButton rdNumero;
+        private System.Windows.Forms.RadioButton rdAssunto;
+        private System.Windows.Forms.RadioButton rdPessoa;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbxLstValores;
+        private System.Windows.Forms.ComboBox cbxLstTipo;
     }
 }
 
