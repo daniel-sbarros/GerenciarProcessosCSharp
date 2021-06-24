@@ -155,7 +155,6 @@ namespace GerenciarProcessos
             // 
             // panel5
             // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.panel2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -166,27 +165,29 @@ namespace GerenciarProcessos
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.panel8);
             this.panel6.Controls.Add(this.infoPanel);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 164);
             this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(5);
-            this.panel6.Size = new System.Drawing.Size(1285, 634);
+            this.panel6.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.panel6.Size = new System.Drawing.Size(1287, 636);
             this.panel6.TabIndex = 2;
             // 
             // panel8
             // 
+            this.panel8.BackColor = System.Drawing.Color.Black;
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.panel11);
             this.panel8.Controls.Add(this.panel10);
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(5, 5);
+            this.panel8.Location = new System.Drawing.Point(3, 0);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(5);
-            this.panel8.Size = new System.Drawing.Size(597, 622);
+            this.panel8.Size = new System.Drawing.Size(603, 631);
             this.panel8.TabIndex = 7;
             // 
             // panel11
@@ -195,7 +196,7 @@ namespace GerenciarProcessos
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(5, 43);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(585, 518);
+            this.panel11.Size = new System.Drawing.Size(591, 527);
             this.panel11.TabIndex = 2;
             // 
             // dgvProcessos
@@ -215,20 +216,21 @@ namespace GerenciarProcessos
             this.dgvProcessos.ReadOnly = true;
             this.dgvProcessos.RowTemplate.Height = 25;
             this.dgvProcessos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProcessos.Size = new System.Drawing.Size(585, 518);
+            this.dgvProcessos.Size = new System.Drawing.Size(591, 527);
             this.dgvProcessos.TabIndex = 2;
             this.dgvProcessos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProcessos_RowEnter);
             // 
             // panel10
             // 
+            this.panel10.BackColor = System.Drawing.Color.Black;
             this.panel10.Controls.Add(this.linkAdd);
             this.panel10.Controls.Add(this.linkLabel1);
             this.panel10.Controls.Add(this.linkDeletar);
             this.panel10.Controls.Add(this.lblAviso);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(5, 561);
+            this.panel10.Location = new System.Drawing.Point(5, 570);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(585, 54);
+            this.panel10.Size = new System.Drawing.Size(591, 54);
             this.panel10.TabIndex = 1;
             // 
             // linkAdd
@@ -284,7 +286,7 @@ namespace GerenciarProcessos
             // 
             this.lblAviso.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblAviso.AutoSize = true;
-            this.lblAviso.Location = new System.Drawing.Point(312, 15);
+            this.lblAviso.Location = new System.Drawing.Point(318, 15);
             this.lblAviso.MinimumSize = new System.Drawing.Size(270, 0);
             this.lblAviso.Name = "lblAviso";
             this.lblAviso.Size = new System.Drawing.Size(270, 25);
@@ -294,12 +296,13 @@ namespace GerenciarProcessos
             // 
             // panel9
             // 
+            this.panel9.BackColor = System.Drawing.Color.Black;
             this.panel9.Controls.Add(this.linkLabel2);
             this.panel9.Controls.Add(this.linkRecentes);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(5, 5);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(585, 38);
+            this.panel9.Size = new System.Drawing.Size(591, 38);
             this.panel9.TabIndex = 0;
             // 
             // linkLabel2
@@ -324,7 +327,7 @@ namespace GerenciarProcessos
             this.linkRecentes.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkRecentes.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkRecentes.LinkColor = System.Drawing.Color.White;
-            this.linkRecentes.Location = new System.Drawing.Point(514, 9);
+            this.linkRecentes.Location = new System.Drawing.Point(520, 9);
             this.linkRecentes.Name = "linkRecentes";
             this.linkRecentes.Size = new System.Drawing.Size(68, 20);
             this.linkRecentes.TabIndex = 11;
@@ -337,10 +340,11 @@ namespace GerenciarProcessos
             this.infoPanel.AutoScroll = true;
             this.infoPanel.Controls.Add(this.panel12);
             this.infoPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.infoPanel.Location = new System.Drawing.Point(602, 5);
+            this.infoPanel.Location = new System.Drawing.Point(606, 0);
+            this.infoPanel.Margin = new System.Windows.Forms.Padding(0);
             this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.infoPanel.Size = new System.Drawing.Size(676, 622);
+            this.infoPanel.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.infoPanel.Size = new System.Drawing.Size(676, 631);
             this.infoPanel.TabIndex = 6;
             // 
             // panel12
@@ -350,19 +354,20 @@ namespace GerenciarProcessos
             this.panel12.Controls.Add(this.pnlAddTarefa);
             this.panel12.Controls.Add(this.panel13);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(5, 0);
+            this.panel12.Location = new System.Drawing.Point(3, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(671, 622);
+            this.panel12.Size = new System.Drawing.Size(673, 631);
             this.panel12.TabIndex = 0;
             // 
             // panel15
             // 
+            this.panel15.BackColor = System.Drawing.Color.Black;
             this.panel15.Controls.Add(this.dgvTarefas);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel15.Location = new System.Drawing.Point(0, 436);
             this.panel15.Name = "panel15";
             this.panel15.Padding = new System.Windows.Forms.Padding(5);
-            this.panel15.Size = new System.Drawing.Size(669, 67);
+            this.panel15.Size = new System.Drawing.Size(671, 76);
             this.panel15.TabIndex = 2;
             // 
             // dgvTarefas
@@ -381,12 +386,13 @@ namespace GerenciarProcessos
             this.dgvTarefas.ReadOnly = true;
             this.dgvTarefas.RowTemplate.Height = 25;
             this.dgvTarefas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTarefas.Size = new System.Drawing.Size(659, 57);
+            this.dgvTarefas.Size = new System.Drawing.Size(661, 66);
             this.dgvTarefas.TabIndex = 3;
             this.dgvTarefas.DoubleClick += new System.EventHandler(this.dgvTarefas_DoubleClick);
             // 
             // pnlAddTarefa
             // 
+            this.pnlAddTarefa.BackColor = System.Drawing.Color.Black;
             this.pnlAddTarefa.Controls.Add(this.label14);
             this.pnlAddTarefa.Controls.Add(this.btnPesquisar);
             this.pnlAddTarefa.Controls.Add(this.arqPath);
@@ -395,9 +401,9 @@ namespace GerenciarProcessos
             this.pnlAddTarefa.Controls.Add(this.arqDesc);
             this.pnlAddTarefa.Controls.Add(this.label13);
             this.pnlAddTarefa.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlAddTarefa.Location = new System.Drawing.Point(0, 503);
+            this.pnlAddTarefa.Location = new System.Drawing.Point(0, 512);
             this.pnlAddTarefa.Name = "pnlAddTarefa";
-            this.pnlAddTarefa.Size = new System.Drawing.Size(669, 117);
+            this.pnlAddTarefa.Size = new System.Drawing.Size(671, 117);
             this.pnlAddTarefa.TabIndex = 1;
             this.pnlAddTarefa.Visible = false;
             // 
@@ -477,6 +483,7 @@ namespace GerenciarProcessos
             // 
             // panel13
             // 
+            this.panel13.BackColor = System.Drawing.Color.Black;
             this.panel13.Controls.Add(this.linkEditar);
             this.panel13.Controls.Add(this.txtStatus);
             this.panel13.Controls.Add(this.label15);
@@ -501,7 +508,7 @@ namespace GerenciarProcessos
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(669, 436);
+            this.panel13.Size = new System.Drawing.Size(671, 436);
             this.panel13.TabIndex = 0;
             // 
             // linkEditar
@@ -511,7 +518,7 @@ namespace GerenciarProcessos
             this.linkEditar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkEditar.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkEditar.LinkColor = System.Drawing.Color.White;
-            this.linkEditar.Location = new System.Drawing.Point(604, 5);
+            this.linkEditar.Location = new System.Drawing.Point(606, 5);
             this.linkEditar.Name = "linkEditar";
             this.linkEditar.Size = new System.Drawing.Size(48, 20);
             this.linkEditar.TabIndex = 22;
@@ -559,6 +566,7 @@ namespace GerenciarProcessos
             this.linkAbrir.TabIndex = 18;
             this.linkAbrir.TabStop = true;
             this.linkAbrir.Text = "IR";
+            this.linkAbrir.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAbrir_LinkClicked);
             // 
             // button2
             // 
@@ -773,7 +781,7 @@ namespace GerenciarProcessos
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1285, 164);
+            this.panel2.Size = new System.Drawing.Size(1287, 164);
             this.panel2.TabIndex = 1;
             // 
             // tabControl1
@@ -784,7 +792,7 @@ namespace GerenciarProcessos
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1285, 164);
+            this.tabControl1.Size = new System.Drawing.Size(1287, 164);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage1
@@ -800,7 +808,7 @@ namespace GerenciarProcessos
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1277, 126);
+            this.tabPage1.Size = new System.Drawing.Size(1279, 126);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Pesquisar";
             // 
@@ -809,7 +817,7 @@ namespace GerenciarProcessos
             this.rdPessoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rdPessoa.AutoSize = true;
             this.rdPessoa.BackColor = System.Drawing.Color.Black;
-            this.rdPessoa.Location = new System.Drawing.Point(545, 6);
+            this.rdPessoa.Location = new System.Drawing.Point(546, 6);
             this.rdPessoa.Name = "rdPessoa";
             this.rdPessoa.Size = new System.Drawing.Size(188, 29);
             this.rdPessoa.TabIndex = 3;
@@ -822,7 +830,7 @@ namespace GerenciarProcessos
             this.rdNumero.AutoSize = true;
             this.rdNumero.BackColor = System.Drawing.Color.Black;
             this.rdNumero.Checked = true;
-            this.rdNumero.Location = new System.Drawing.Point(335, 6);
+            this.rdNumero.Location = new System.Drawing.Point(336, 6);
             this.rdNumero.Name = "rdNumero";
             this.rdNumero.Size = new System.Drawing.Size(99, 29);
             this.rdNumero.TabIndex = 2;
@@ -838,7 +846,7 @@ namespace GerenciarProcessos
             this.checkEletronicos.Checked = true;
             this.checkEletronicos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkEletronicos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkEletronicos.Location = new System.Drawing.Point(771, 86);
+            this.checkEletronicos.Location = new System.Drawing.Point(772, 86);
             this.checkEletronicos.Name = "checkEletronicos";
             this.checkEletronicos.Size = new System.Drawing.Size(169, 24);
             this.checkEletronicos.TabIndex = 8;
@@ -850,7 +858,7 @@ namespace GerenciarProcessos
             this.txtPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPesquisar.Culture = new System.Globalization.CultureInfo("en-001");
             this.txtPesquisar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtPesquisar.Location = new System.Drawing.Point(335, 47);
+            this.txtPesquisar.Location = new System.Drawing.Point(336, 47);
             this.txtPesquisar.Mask = "99999.999999.9999-99";
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(607, 33);
@@ -863,7 +871,7 @@ namespace GerenciarProcessos
             this.rdAssunto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rdAssunto.AutoSize = true;
             this.rdAssunto.BackColor = System.Drawing.Color.Black;
-            this.rdAssunto.Location = new System.Drawing.Point(844, 6);
+            this.rdAssunto.Location = new System.Drawing.Point(845, 6);
             this.rdAssunto.Name = "rdAssunto";
             this.rdAssunto.Size = new System.Drawing.Size(97, 29);
             this.rdAssunto.TabIndex = 4;
@@ -878,7 +886,7 @@ namespace GerenciarProcessos
             this.checkFisicos.Checked = true;
             this.checkFisicos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkFisicos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkFisicos.Location = new System.Drawing.Point(568, 86);
+            this.checkFisicos.Location = new System.Drawing.Point(569, 86);
             this.checkFisicos.Name = "checkFisicos";
             this.checkFisicos.Size = new System.Drawing.Size(139, 24);
             this.checkFisicos.TabIndex = 9;
@@ -892,7 +900,7 @@ namespace GerenciarProcessos
             this.checkConcluidos.Checked = true;
             this.checkConcluidos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkConcluidos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkConcluidos.Location = new System.Drawing.Point(335, 86);
+            this.checkConcluidos.Location = new System.Drawing.Point(336, 86);
             this.checkConcluidos.Name = "checkConcluidos";
             this.checkConcluidos.Size = new System.Drawing.Size(169, 24);
             this.checkConcluidos.TabIndex = 7;
@@ -909,12 +917,13 @@ namespace GerenciarProcessos
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1277, 126);
+            this.tabPage2.Size = new System.Drawing.Size(1279, 126);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Listar";
             // 
             // btnListar
             // 
+            this.btnListar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnListar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnListar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnListar.Location = new System.Drawing.Point(957, 44);
@@ -927,6 +936,7 @@ namespace GerenciarProcessos
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(206, 50);
@@ -937,6 +947,7 @@ namespace GerenciarProcessos
             // 
             // cbxLstValores
             // 
+            this.cbxLstValores.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxLstValores.BackColor = System.Drawing.Color.Black;
             this.cbxLstValores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxLstValores.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -949,6 +960,7 @@ namespace GerenciarProcessos
             // 
             // cbxLstTipo
             // 
+            this.cbxLstTipo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxLstTipo.BackColor = System.Drawing.Color.Black;
             this.cbxLstTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxLstTipo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);

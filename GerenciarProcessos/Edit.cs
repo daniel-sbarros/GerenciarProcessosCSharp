@@ -95,8 +95,6 @@ namespace GerenciarProcessos
 
         private void linkAbrir_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LinkLabel linkLabel = (LinkLabel)sender;
-
             if (addNumero.MaskFull)
             {
                 System.Diagnostics.Process.Start(Global.Navegador, $"https://suap.ifma.edu.br/admin/{ (addTipo.Text == "Físico" ? "protocolo" : "processo_eletronico") }/processo/?q={addNumero.Text}");

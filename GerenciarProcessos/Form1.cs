@@ -125,10 +125,19 @@ namespace GerenciarProcessos
             CarregarDgv(dgvProcessos, "SELECT * FROM processos");
         }
 
+        private void linkAbrir_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Global.Navegador, $"https://suap.ifma.edu.br/admin/{ (txtTipo.Text == "Físico" ? "protocolo" : "processo_eletronico") }/processo/?q={linkNumero.Text}");
+        }
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            int linha = -1;
+
             foreach (DataGridViewRow row in dgvProcessos.SelectedRows)
             {
+                linha = row.Index;
+
                 new Edit(new Processo()
                 {
                     Id = int.Parse(row.Cells[0].Value.ToString()),
@@ -141,7 +150,9 @@ namespace GerenciarProcessos
                     Data_da_Divisao = row.Cells[7].Value.ToString()
                 }).ShowDialog();
             }
+
             CarregarDgv(dgvProcessos);
+            if(linha != -1) dgvProcessos.CurrentCell = dgvProcessos.Rows[linha].Cells[0];
         }
 
         private void CarregarDados(DataGridViewCellEventArgs e)
@@ -242,10 +253,14 @@ namespace GerenciarProcessos
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int linha = dgvProcessos.CurrentRow.Index;
+
             new Conexao(Global.DbName).Update("processos", ID, "Observacoes", txtObservacoes.Text.Trim());
             new Conexao(Global.DbName).Update("processos", ID, "Status", txtStatus.Text.Trim());
             CarregarDgv(dgvProcessos);
             MostrarT();
+
+            dgvProcessos.CurrentCell = dgvProcessos.Rows[linha].Cells[0];
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -288,6 +303,8 @@ namespace GerenciarProcessos
         private void linkAdd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new Edit().ShowDialog();
+            CarregarDgv(dgvProcessos);
+            dgvProcessos.CurrentCell = dgvProcessos.Rows[(dgvProcessos.RowCount - 1)].Cells[0];
         }
 
         private void cbxLstTipo_SelectedIndexChanged(object sender, EventArgs e)
