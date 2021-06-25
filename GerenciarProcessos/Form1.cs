@@ -6,6 +6,7 @@ using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -224,7 +225,16 @@ namespace GerenciarProcessos
 
         private void copiar_LinkLabel(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Clipboard.SetText(((LinkLabel)sender).Text);
+            LinkLabel link = (LinkLabel)sender;
+
+            if (link.Name != "linkInteressado")
+            {
+                Clipboard.SetText(link.Text);
+            }
+            else
+            {
+                Clipboard.SetText(Regex.Match(link.Text, @"\d*\d").ToString());
+            }
         }
 
         private void MostrarT(bool ocutar = true)

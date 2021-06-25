@@ -29,8 +29,8 @@ namespace GerenciarProcessos
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -203,9 +203,9 @@ namespace GerenciarProcessos
             // 
             this.dgvProcessos.AllowUserToAddRows = false;
             this.dgvProcessos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.dgvProcessos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dgvProcessos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProcessos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProcessos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProcessos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
@@ -374,9 +374,9 @@ namespace GerenciarProcessos
             // 
             this.dgvTarefas.AllowUserToAddRows = false;
             this.dgvTarefas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.dgvTarefas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dgvTarefas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTarefas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvTarefas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.dgvTarefas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -687,8 +687,7 @@ namespace GerenciarProcessos
             this.linkInteressado.Name = "linkInteressado";
             this.linkInteressado.Size = new System.Drawing.Size(500, 25);
             this.linkInteressado.TabIndex = 7;
-            this.linkInteressado.TabStop = true;
-            this.linkInteressado.Text = "00000.000000.0000-00";
+            this.linkInteressado.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.copiar_LinkLabel);
             // 
             // label16
             // 
@@ -712,7 +711,6 @@ namespace GerenciarProcessos
             this.txtAssunto.Name = "txtAssunto";
             this.txtAssunto.Size = new System.Drawing.Size(500, 25);
             this.txtAssunto.TabIndex = 5;
-            this.txtAssunto.Text = "Eletrônico";
             // 
             // label10
             // 
@@ -736,7 +734,6 @@ namespace GerenciarProcessos
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(150, 25);
             this.txtTipo.TabIndex = 3;
-            this.txtTipo.Text = "Eletrônico";
             // 
             // label12
             // 
@@ -762,8 +759,7 @@ namespace GerenciarProcessos
             this.linkNumero.Name = "linkNumero";
             this.linkNumero.Size = new System.Drawing.Size(220, 25);
             this.linkNumero.TabIndex = 1;
-            this.linkNumero.TabStop = true;
-            this.linkNumero.Text = "00000.000000.0000-00";
+            this.linkNumero.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.copiar_LinkLabel);
             // 
             // label11
             // 
