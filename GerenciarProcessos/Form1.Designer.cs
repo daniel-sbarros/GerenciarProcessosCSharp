@@ -29,8 +29,8 @@ namespace GerenciarProcessos
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -203,9 +203,9 @@ namespace GerenciarProcessos
             // 
             this.dgvProcessos.AllowUserToAddRows = false;
             this.dgvProcessos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.dgvProcessos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dgvProcessos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProcessos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProcessos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProcessos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
@@ -219,6 +219,7 @@ namespace GerenciarProcessos
             this.dgvProcessos.Size = new System.Drawing.Size(591, 527);
             this.dgvProcessos.TabIndex = 2;
             this.dgvProcessos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProcessos_RowEnter);
+            this.dgvProcessos.DoubleClick += new System.EventHandler(this.dgvProcessos_DoubleClick);
             // 
             // panel10
             // 
@@ -374,9 +375,9 @@ namespace GerenciarProcessos
             // 
             this.dgvTarefas.AllowUserToAddRows = false;
             this.dgvTarefas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.dgvTarefas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dgvTarefas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTarefas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvTarefas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.dgvTarefas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -646,8 +647,8 @@ namespace GerenciarProcessos
             this.txtDivisao.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtDivisao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.txtDivisao.Location = new System.Drawing.Point(532, 182);
-            this.txtDivisao.MaximumSize = new System.Drawing.Size(120, 0);
-            this.txtDivisao.MinimumSize = new System.Drawing.Size(120, 0);
+            this.txtDivisao.MaximumSize = new System.Drawing.Size(120, 25);
+            this.txtDivisao.MinimumSize = new System.Drawing.Size(120, 25);
             this.txtDivisao.Name = "txtDivisao";
             this.txtDivisao.Size = new System.Drawing.Size(120, 25);
             this.txtDivisao.TabIndex = 11;
@@ -859,6 +860,7 @@ namespace GerenciarProcessos
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(607, 33);
             this.txtPesquisar.TabIndex = 0;
+            this.txtPesquisar.Text = "23249";
             this.txtPesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisar_KeyDown);
             // 

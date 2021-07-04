@@ -46,7 +46,6 @@ namespace GerenciarProcessos
             this.label3 = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.addNumero = new System.Windows.Forms.MaskedTextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // txtDate
@@ -246,20 +245,7 @@ namespace GerenciarProcessos
             this.addNumero.Size = new System.Drawing.Size(373, 33);
             this.addNumero.TabIndex = 0;
             this.addNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkLabel1.LinkColor = System.Drawing.Color.LimeGreen;
-            this.linkLabel1.Location = new System.Drawing.Point(555, 102);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(30, 25);
-            this.linkLabel1.TabIndex = 29;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "IR";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAbrir_LinkClicked);
+            this.addNumero.KeyDown += new System.Windows.Forms.KeyEventHandler(this.addNumero_KeyDown);
             // 
             // Edit
             // 
@@ -267,7 +253,6 @@ namespace GerenciarProcessos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1034, 586);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.addObservacoes);
@@ -319,6 +304,5 @@ namespace GerenciarProcessos
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.MaskedTextBox addNumero;
-        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

@@ -32,8 +32,17 @@ namespace GerenciarProcessos
 
         private void rdNumero_CheckedChanged(object sender, EventArgs e)
         {
-            txtPesquisar.Mask = rdNumero.Checked ? "99999.999999.9999-99" : "";
-            txtPesquisar.Clear();
+            if (rdNumero.Checked)
+            {
+                txtPesquisar.Mask = "99999.999999.9999-99";
+                txtPesquisar.Text = "23249";
+            }
+            else
+            {
+                txtPesquisar.Mask = "";
+                txtPesquisar.Clear();
+            }
+            
             txtPesquisar.Focus();
         }
 
@@ -160,6 +169,8 @@ namespace GerenciarProcessos
         {
             try
             {
+                Match match = Regex.Match(dgvProcessos.Rows[e.RowIndex].Cells[7].Value.ToString(), @"(?<ano>\d{4})[-](?<mes>\d{2})[-](?<dia>\d{2})*");
+
                 MostrarT();
                 ID = dgvProcessos.Rows[e.RowIndex].Cells[0].Value.ToString();
                 linkNumero.Text = dgvProcessos.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -168,7 +179,7 @@ namespace GerenciarProcessos
                 linkInteressado.Text = dgvProcessos.Rows[e.RowIndex].Cells[4].Value.ToString();
                 txtStatus.Text = dgvProcessos.Rows[e.RowIndex].Cells[5].Value.ToString();
                 txtObservacoes.Text = dgvProcessos.Rows[e.RowIndex].Cells[6].Value.ToString();
-                txtDivisao.Text = dgvProcessos.Rows[e.RowIndex].Cells[7].Value.ToString();
+                txtDivisao.Text = $"{match.Groups["dia"].Value}/{match.Groups["mes"].Value}/{match.Groups["ano"].Value}";
                 CarregarDgv(dgvTarefas, $"SELECT Id, Nome, Descricao FROM documentos WHERE processo_id = {ID}");
             }
             catch (Exception err)
@@ -357,27 +368,35 @@ namespace GerenciarProcessos
             if (cbxLstTipo.SelectedIndex >= 0 && cbxLstValores.SelectedIndex >= 0)
             {
                 Conexao conexao = new Conexao(Global.DbName);
-                StringBuilder qr = null;
 
                 switch (cbxLstTipo.Text)
                 {
                     case "Status":
-                        qr = new StringBuilder($"SELECT * FROM processos WHERE Status LIKE '%{cbxLstValores.Text}%'");
+                        SQL = new StringBuilder($"SELECT * FROM processos WHERE Status LIKE '%{cbxLstValores.Text}%'");
                         break;
                     case "Tipo":
-                        qr = new StringBuilder($"SELECT * FROM processos WHERE Tipo LIKE '%{cbxLstValores.Text}%'");
+                        SQL = new StringBuilder($"SELECT * FROM processos WHERE Tipo LIKE '%{cbxLstValores.Text}%'");
                         break;
                     case "Data da Divisão":
-                        qr = new StringBuilder($"SELECT * FROM processos WHERE Data_da_Divisao LIKE '%{cbxLstValores.Text}%'");
+                        SQL = new StringBuilder($"SELECT * FROM processos WHERE Data_da_Divisao LIKE '%{cbxLstValores.Text}%'");
                         break;
                     default:
                         MessageBox.Show("Selecione um dos TIPOS de Listagem.");
                         break;
                 }
 
-                dgvProcessos.DataSource = conexao.DataSource(qr.ToString());
+                dgvProcessos.DataSource = conexao.DataSource(SQL.ToString());
                 lblAviso.Text = $"{dgvProcessos.Rows.Count} Processo(s) Encontrado(s).";
             }
+        }
+
+        private void dgvProcessos_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                Clipboard.SetText(dgvProcessos.CurrentCell.Value.ToString());
+            }
+            catch (Exception){ }
         }
     }
 }
